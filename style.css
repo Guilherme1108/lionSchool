@@ -47,10 +47,52 @@ header {
     color: white;
 }
 
-main {
-    display: flex;
+main {    
     flex-grow: 1;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.fraseImagem {
+    font-size: 3.5rem;
+    color: #353535;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.fraseImagem span {
+    color: var(--primary-color);
+}
+
+.cursos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.curso {
+    height: 200px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    background-color: var(--primary-color);
+    color: var(--secundary-color);
+    gap: 24px;
+    box-shadow: 12px 12px 5px #3347B080;
+    transition: 0.2s ease;
+}
+
+.curso:hover {
+    transform: scale(1.1);
 }
 
 footer {
