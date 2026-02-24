@@ -1,5 +1,5 @@
 'use strict'
-import { getCourses } from "./api.js";
+import { getCourses, getStudentsByCourse } from "./api.js";
 
 function criarTelaHome() {
 
@@ -33,7 +33,6 @@ function criarTelaHome() {
   containerHome.appendChild(imgStudent);
   containerHome.appendChild(containerCursos);
 }
-
 criarTelaHome()
 
 function criarCurso(cursos) {
@@ -43,7 +42,6 @@ function criarCurso(cursos) {
   curso.className = 'curso';
 
   const id = cursos.id
-  console.log(id)
 
   const img = document.createElement('img');
   if (id == 1) {
@@ -61,6 +59,7 @@ function criarCurso(cursos) {
     document.getElementById("container-home").style.display = "none";
     document.getElementById('container-alunos').style.display = 'flex'
     document.getElementById('headerInformations').style.display = 'flex'
+    carregarAlunos(id)
   })
 
   curso.appendChild(img);
@@ -89,6 +88,9 @@ function criarDetalhesDoHeader() {
     containerAlunos.style.display = 'none'
 
     headerInformations.style.display = 'none'
+
+    const cards = document.getElementById("cards");
+    cards.innerHTML = ''
 
     const containerHome = document.getElementById('container-home')
     containerHome.style.display = 'flex'
@@ -163,27 +165,46 @@ function criarTelaAlunos() {
   // div cards
   const cards = document.createElement("div");
   cards.className = "cards";
-
-  // div card
-  const card = document.createElement("div");
-  card.className = "card";
-
-  // img
-  const img = document.createElement("img");
-  img.src = "img/icon-profile.svg";
-  img.alt = "";
-
-  // span nome
-  const nome = document.createElement("span");
-  nome.textContent = "Guilherme Moreira de Souza";
-
-  // montagem
-  card.appendChild(img);
-  card.appendChild(nome);
-
-  cards.appendChild(card);
+  cards.id = 'cards'
 
   containerAlunos.appendChild(title);
   containerAlunos.appendChild(cards);
 }
 criarTelaAlunos()
+
+function criarCardAluno(aluno) {
+  // div cards
+  const cards = document.getElementById("cards");
+
+  // div card
+  const card = document.createElement("div");
+  card.className = "card";
+
+  const id = aluno.id
+
+  // img
+  const img = document.createElement("img");
+  img.src = aluno.foto;
+  img.alt = "foto do aluno";
+
+  const divAreaDoNome = document.createElement('div')
+
+  // span nome
+  const nome = document.createElement("span");
+  nome.textContent = aluno.nome;
+
+  // montagem
+  divAreaDoNome.appendChild(nome)
+
+
+  card.appendChild(img);
+  card.appendChild(divAreaDoNome);
+
+  cards.appendChild(card);
+
+}
+
+async function carregarAlunos(id) {
+  const alunos = await getStudentsByCourse(id)
+  alunos.forEach(criarCardAluno)
+}
