@@ -1,6 +1,13 @@
 'use strict'
 
-function criarHome() {
+function criarTelaHome() {
+
+const header = document.getElementById('header')
+
+
+
+
+
 const containerHome = document.getElementById('container-home')
 
 /* ===== fraseImagem ===== */
@@ -52,4 +59,44 @@ containerHome.appendChild(cursos);
 
 }
 
-criarHome()
+criarTelaHome()
+
+/* ALUNOS */
+
+function criarTelaAlunos() {
+
+const containerAlunos = document.getElementById("container-alunos");
+
+// span title
+const title = document.createElement("span");
+title.className = "title";
+title.textContent = "Desenvolvimento de Sistemas";
+
+// div cards
+const cards = document.createElement("div");
+cards.className = "cards";
+
+// div card
+const card = document.createElement("div");
+card.className = "card";
+
+// img
+const img = document.createElement("img");
+img.src = "img/icon-profile.svg";
+img.alt = "";
+
+// span nome
+const nome = document.createElement("span");
+nome.textContent = "Guilherme Moreira de Souza";
+
+// montagem
+card.appendChild(img);
+card.appendChild(nome);
+
+cards.appendChild(card);
+
+containerAlunos.appendChild(title);
+containerAlunos.appendChild(cards);
+}
+
+criarTelaAlunos()

@@ -18,14 +18,18 @@ body {
 }
 
 header {
-  min-height: 100px;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 96px;
-  padding-right: 96px;
-  background-color: var(--primary-color);
+
+  .mainHeader {
+    min-height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 96px;
+    padding-right: 96px;
+    background-color: var(--primary-color);
+  }
 
   .iconName {
     display: flex;
@@ -44,6 +48,40 @@ header {
     font-size: 2rem;
     font-weight: 500;
     color: white;
+  }
+
+  .headerInformations {
+    max-height: 50px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #BCC2E5;
+  }
+
+  .legenda {
+    display: flex;
+    gap: 24px;
+    color: var(--primary-color);
+  }
+
+  .information {
+    display: flex;
+    gap: 8px;
+  }
+
+  .quadrado {
+    height: 20px;
+    width: 20px;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .azul {
+    background-color: var(--primary-color);
+  }
+
+  .amarelo {
+    background-color: #E5B657;
   }
 }
 
@@ -111,7 +149,6 @@ main {
     align-items: center;
     flex-direction: column;
     padding-top: 35px;
-    display: none;
 
     .title {
       font-size: 4rem;
@@ -146,29 +183,49 @@ main {
     }
   }
 
+  /*-----------------------------ALUNO-----------------------------*/
+
   .container-aluno {
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    display: none;
+
+    .profile {
+      height: 500px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      box-shadow: 0px 0px 10px 5px #00000040;
+    }
+
+    .graphics {
+      height: 500px;
+      width: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      box-shadow: 0px 0px 10px 5px #00000040;
+    }
+
+    .dataGraphics {
+      display: flex;
+      flex-direction: column;
+      gap: 17px;
+    }
+
+    .bar {
+      height: 300px;
+      width: 16px;
+      background-color: red;
+    }
+
   }
 
-  .profile {
-    height: 500px;
-    width: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    box-shadow: 0px 0px 10px 5px #00000040;
-  }
-
-  .graphics {
-    height: 500px;
-    width: 500px;
-    box-shadow: 0px 0px 10px 5px #00000040;
-  }
 
 
 }
