@@ -11,7 +11,18 @@ export async function getCourses() {
 
 export async function getStudentsByCourse(id) {
     try {
-        const response = await fetch(`https://corsproxy.io/?url=https://lion-school-backend.onrender.com/alunos?curso_id=${id}`)
+        const response = await fetch(`https://lion-school-backend.onrender.com/alunos?curso_id=${id}`)
+        const data = await response.json()
+
+        return data
+    } catch (error) {
+        console.error('Erro ao carregar os alunos:', error)
+    }
+}
+
+export async function getStudentById(id) {
+    try {
+        const response = await fetch(`https://lion-school-backend.onrender.com/alunos/${id}`)
         const data = await response.json()
 
         return data
