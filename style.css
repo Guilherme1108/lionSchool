@@ -57,12 +57,14 @@ header {
     align-items: center;
     justify-content: space-around;
     background-color: #BCC2E5;
+    color: var(--primary-color);
+    font-size: 1rem;
+    gap: 870px;
   }
 
   .legenda {
     display: flex;
     gap: 24px;
-    color: var(--primary-color);
   }
 
   .information {
@@ -97,7 +99,6 @@ main {
     align-items: center;
     justify-content: space-around;
     font-family: Roboto;
-    display: none;
 
     .fraseImagem {
       font-size: 3.5rem;
@@ -145,7 +146,7 @@ main {
   .container-alunos {
     height: 100%;
     width: 100%;
-    display: flex;
+    display: none;
     align-items: center;
     flex-direction: column;
     padding-top: 35px;
@@ -188,7 +189,7 @@ main {
   .container-aluno {
     height: 100%;
     width: 100%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-around;
     display: none;
