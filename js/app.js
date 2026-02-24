@@ -59,7 +59,8 @@ function criarCurso(cursos) {
 
   curso.addEventListener('click', () => {
     document.getElementById("container-home").style.display = "none";
-    criarTelaAlunos()
+    document.getElementById('container-alunos').style.display = 'flex'
+    document.getElementById('headerInformations').style.display = 'flex'
   })
 
   curso.appendChild(img);
@@ -69,22 +70,36 @@ function criarCurso(cursos) {
 }
 
 async function carregarCursos() {
-  console.log('antes do fetch')
   const cursos = await getCourses()
-  console.log('depois do fetch', cursos)
   cursos.forEach(criarCurso)
 }
 carregarCursos()
 
-
-/* ALUNOS */
-
-function criarTelaAlunos() {
-
+/* SEGUNDA PARTE DO HEADER */
+function criarDetalhesDoHeader() {
   const header = document.getElementById('header')
+
+  const voltar = document.getElementById('textback')
+  voltar.textContent = 'Voltar'
+
+  const divVoltar = document.getElementById('back')
+  divVoltar.addEventListener('click', () => {
+
+    const containerAlunos = document.getElementById("container-alunos");
+    containerAlunos.style.display = 'none'
+
+    headerInformations.style.display = 'none'
+
+    const containerHome = document.getElementById('container-home')
+    containerHome.style.display = 'flex'
+
+    voltar.textContent = ('Sair')
+  })
+
   // container principal
   const headerInformations = document.createElement("div");
   headerInformations.classList.add("headerInformations");
+  headerInformations.id = 'headerInformations'
 
   // span Status
   const statusSpan = document.createElement("span");
@@ -130,12 +145,15 @@ function criarTelaAlunos() {
 
   // adicionando no header
   header.appendChild(headerInformations);
+}
+criarDetalhesDoHeader()
 
 
+/* ALUNOS */
 
+function criarTelaAlunos() {
 
   const containerAlunos = document.getElementById("container-alunos");
-  containerAlunos.style.display = 'flex'
 
   // span title
   const title = document.createElement("span");
@@ -168,5 +186,4 @@ function criarTelaAlunos() {
   containerAlunos.appendChild(title);
   containerAlunos.appendChild(cards);
 }
-
-// criarTelaAlunos()
+criarTelaAlunos()

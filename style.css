@@ -48,12 +48,13 @@ header {
     font-size: 2rem;
     font-weight: 500;
     color: white;
+    cursor: pointer;
   }
 
   .headerInformations {
     max-height: 50px;
     height: 100%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-around;
     background-color: #BCC2E5;
