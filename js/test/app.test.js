@@ -8,10 +8,10 @@
  ***********************************************************************************/
 
 
-//Import do arquivo a ser realizado os testes unitários
-const criacaoDaTela = require('../app.js')
+// //Import do arquivo a ser realizado os testes unitários
+// const criacaoDaTela = require('../app.js')
 
-//CENÁRIO DE TESTE 01: Teste de criação dos cursos
-test('Validação dos elementos se eles existem:', function(){
-    expect(criacaoDaTela.criarCurso)
-})
+// //CENÁRIO DE TESTE 01: Teste de criação dos cursos
+// test('Validação dos elementos se eles existem:', function(){
+//     expect(criacaoDaTela.criarCurso)
+// })

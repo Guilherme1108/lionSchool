@@ -6,10 +6,11 @@ export async function getCourses() {
         return data
     } catch (error) {
         console.error('Erro ao carregar os cursos:', error)
+        throw error
     }
 }
 
-export async function getStudentsByCourse(id) {
+ export async function getStudentsByCourse(id) {
     try {
         const response = await fetch(`https://lion-school-backend.onrender.com/alunos?curso_id=${id}`)
         const data = await response.json()
@@ -30,3 +31,9 @@ export async function getStudentById(id) {
         console.error('Erro ao carregar os alunos:', error)
     }
 }
+
+// module.exports = {
+//     getCourses,
+//     getStudentsByCourse,
+//     getStudentById
+// }
