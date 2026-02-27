@@ -235,7 +235,6 @@ async function carregarAlunos(id) {
 
 /* ALUNO */
 function criarTelaAluno(aluno) {
-  console.log(aluno)
 
   const containerAluno = document.getElementById('container-aluno')
 
@@ -273,9 +272,9 @@ function criarTelaAluno(aluno) {
     filledBar.className = 'filledBar'
     filledBar.style.height = `${valor}%`
 
-    if(number < 50) {
+    if(valor < 50) {
       filledBar.style.backgroundColor = '#C11010'
-    } else if (number > 50 && number < 75) {
+    } else if (valor >= 50 && valor < 75) {
       filledBar.style.backgroundColor = '#E5B657'
     } else {
       filledBar.style.backgroundColor = '#3347B0'
