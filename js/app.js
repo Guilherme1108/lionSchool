@@ -274,10 +274,13 @@ function criarTelaAluno(aluno) {
 
     if(valor < 50) {
       filledBar.style.backgroundColor = '#C11010'
+      filledBar.style.boxShadow = '0 0 15px 5px rgba(193, 16, 16, 0.555)'
     } else if (valor >= 50 && valor < 75) {
       filledBar.style.backgroundColor = '#E5B657'
+      filledBar.style.boxShadow = '0 0 15px 5px rgba(229, 182, 87, 0.555)'
     } else {
       filledBar.style.backgroundColor = '#3347B0'
+      filledBar.style.boxShadow = '0 0 15px 5px rgba(51, 72, 176, 0.555)'
     }
 
     bar.appendChild(filledBar)
